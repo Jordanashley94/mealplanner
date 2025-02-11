@@ -46,6 +46,8 @@
             <option value="balanced">Balanced (40% carbs, 30% protein, 30% fat)</option>
             <option value="lowCarb">Low Carb (20% carbs, 40% protein, 40% fat)</option>
             <option value="highProtein">High Protein (30% carbs, 50% protein, 20% fat)</option>
+            <option value="keto">Keto (10% carbs, 60% fat, 30% protein)</option>
+            <option value="athlete">Athlete (50% carbs, 30% protein, 20% fat)</option>
         </select>
         
         <button onclick="generateMeals()">Generate Meal Plan</button>
@@ -69,11 +71,15 @@
 
             let meals;
             if (macroSplit === 'balanced') {
-                meals = ["Oatmeal with nuts & berries", "Grilled chicken with quinoa", "Salmon with veggies"];
+                meals = ["50g Oatmeal with 20g nuts & 50g berries", "150g Grilled chicken with 100g quinoa", "120g Salmon with 150g veggies"];
             } else if (macroSplit === 'lowCarb') {
-                meals = ["Eggs & avocado", "Grilled steak with greens", "Baked salmon with asparagus"];
+                meals = ["2 Eggs & 100g avocado", "200g Grilled steak with 150g greens", "150g Baked salmon with 120g asparagus"];
+            } else if (macroSplit === 'highProtein') {
+                meals = ["200g Greek yogurt & 30g almonds", "180g Chicken breast & 120g brown rice", "160g Lean beef & 150g roasted veggies"];
+            } else if (macroSplit === 'keto') {
+                meals = ["3 Scrambled eggs with 50g cheese & 30g butter", "150g Fatty steak with 20g olive oil & 100g spinach", "120g Salmon with 30g nuts"];
             } else {
-                meals = ["Greek yogurt & almonds", "Chicken breast & brown rice", "Lean beef & roasted veggies"];
+                meals = ["80g Whole wheat toast with 2 eggs", "180g Chicken & 150g sweet potato", "150g Salmon & 200g rice"];
             }
             
             document.getElementById('mealPlan').innerText = meals.join("\n");
